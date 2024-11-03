@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthdate Message</title>
+</head>
+<body>
+    <h2>Enter your birthdate:</h2>
+    <input type="date" id="birthdate">
+    <button onclick="showMessage()">Submit</button>
+
+    <script>
+        function showMessage() {
+            const birthdate = document.getElementById("birthdate").value;
+            if (birthdate) {
+                alert(`You're the cutest person born on ${birthdate}`);
+            } else {
+                alert("Please enter your birthdate.");
+            }
+        }
+    </script>
+</body>
+</html>
