@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Message</title>
+    <!-- Link to Google Fonts for stylish text -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #FFAFBD, #ffc3a0);
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+        }
+
+        /* Centered container styling */
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+            max-width: 300px;
+            width: 100%;
+        }
+
+        /* Heading style */
+        h2 {
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #FF7E79;
+        }
+
+        /* Input field styling */
+        input[type="text"] {
+            font-size: 16px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 10px;
+            width: 100%;
+            max-width: 250px;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
+        /* Button styling with animation */
+        button {
+            margin-top: 20px;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+            background-color: #FF7E79;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        /* Button hover effect */
+        button:hover {
+            background-color: #ff4e4b;
+            transform: scale(1.05);
+        }
+
+        /* Styled message popup */
+        .message {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #FF7E79;
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+            border-radius: 10px;
+            animation: fadeIn 0.8s ease;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Enter Your Birthdate</h2>
+        <form id="birthdayForm">
+            <input type="text" id="birthdate" placeholder="YYYY-MM-DD" required>
+            <button type="button" onclick="showMessage()">Submit</button>
+        </form>
+        <div id="message" class="message" style="display: none;"></div>
+    </div>
+
+    <script>
+        function showMessage() {
+            // Get the birthdate from the input
+            const birthdate = document.getElementById('birthdate').value;
+            const messageDiv = document.getElementById('message');
+            
+            // Check if the date is entered
+            if (birthdate) {
+                // Display a custom message on the page
+                messageDiv.style.display = 'block';
+                messageDiv.innerText = `You're the cutest person born on ${birthdate}!`;
+            } else {
+                messageDiv.style.display = 'block';
+                messageDiv.innerText = "Please enter a birthdate.";
+            }
+        }
+    </script>
+</body>
+</html>
